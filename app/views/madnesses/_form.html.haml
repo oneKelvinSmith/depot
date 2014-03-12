@@ -1,0 +1,13 @@
+= form_for @madness do |f|
+  - if @madness.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@madness.errors.count, "error")} prohibited this madness from being saved:"
+      %ul
+        - @madness.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :being
+    = f.text_field :being
+  .actions
+    = f.submit 'Save'

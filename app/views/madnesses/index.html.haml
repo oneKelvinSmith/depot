@@ -1,0 +1,19 @@
+%h1 Listing madnesses
+
+%table
+  %tr
+    %th Being
+    %th
+    %th
+    %th
+
+  - @madnesses.each do |madness|
+    %tr
+      %td= madness.being
+      %td= link_to 'Show', madness
+      %td= link_to 'Edit', edit_madness_path(madness)
+      %td= link_to 'Destroy', madness, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Madness', new_madness_path

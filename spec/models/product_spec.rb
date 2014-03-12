@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Product do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:product) { Product.save title: 'test' }
+  it { should validate_presence_of(:title) }
 end
